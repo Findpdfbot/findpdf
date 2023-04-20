@@ -679,7 +679,7 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
+            [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 5)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
@@ -778,7 +778,7 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
         k = await msg.reply("I couldn't find anything related to that. Check your spelling")
-        await asyncio.sleep(8)
+        await asyncio.sleep(5)
         await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
@@ -790,7 +790,7 @@ async def advantage_spell_chok(msg):
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
     j = await msg.reply("I couldn't find anything related to that\n നിങ്ങൾ type ചെയ്ത spelling പരിശോധിക്കുക, അല്ലെങ്കിൽ മലയാളത്തിൽ or മംഗ്ലീഷിൽ വീണ്ടും ശ്രമിക്കുക", reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(10)
+    await asyncio.sleep(5)
     await j.delete()
     """await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))"""
