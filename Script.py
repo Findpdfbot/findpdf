@@ -125,10 +125,11 @@ This module only works for my admins
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
 Added By - {}
-#Pdf4uBot
+#FindPDFBot
 """
-    LOG_TEXT_P = """#NewUser
+    LOG_TEXT_P = """#NewUser on @FindPDFbot
+    
 ID - <code>{}</code>
 Name - {}
-#Pdf4uBot
+#FindPDFBot
 """
